@@ -1,0 +1,8 @@
+spring:
+    application:
+        name: locomotive
+security:
+  basic:
+    enabled: false
+server:
+    port: 8080
