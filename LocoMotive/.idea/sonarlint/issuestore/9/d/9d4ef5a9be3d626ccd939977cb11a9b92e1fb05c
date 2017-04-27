@@ -1,0 +1,8 @@
+
+‰squid:UselessImportCheck"[Remove this unused import 'org.springframework.boot.autoconfigure.EnableAutoConfiguration'.(æèşŞøÿÿÿÿ8ŠÖ·§¹+
+squid:UselessImportCheck"dRemove this unused import 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration'.(¦–·Ë8¥˜¿Ğ¸+
+squid:UselessImportCheck"aRemove this unused import 'org.springframework.data.jpa.repository.config.EnableJpaRepositories'.(²œ˜üÿÿÿÿ8üÀ»§¹+
+squid:UselessImportCheck"QRemove this unused import 'org.springframework.context.annotation.ComponentScan'.(æëòÒûÿÿÿÿ8üÀ»§¹+
+—squid:UselessImportCheck"iRemove this unused import 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration'.(“ìšúÿÿÿÿ8¥˜¿Ğ¸+
+~squid:UselessImportCheck"URemove this unused import 'org.springframework.boot.autoconfigure.domain.EntityScan'.(›Ù¯8üÀ»§¹+
+Tsquid:S1118":Add a private constructor to hide the implicit public one.(¼è„½úÿÿÿÿ

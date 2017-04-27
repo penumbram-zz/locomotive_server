@@ -1,4 +1,4 @@
-package app.rest;
+package app.rest.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,5 +20,21 @@ public class UserServiceImpl implements IUserService {
     public void saveUser(User user) {
         userRepository.save(user);
     }
+
+    @Override
+    public void deleteUser(User user) {
+        userRepository.delete(user);
+    }
+
+    @Override
+    public void deleteById(long id) {
+        userRepository.deleteById(id);
+    }
+
+    @Override
+    public User getUserById(long id) {
+        return userRepository.findOne(id);
+    }
+
 
 }
