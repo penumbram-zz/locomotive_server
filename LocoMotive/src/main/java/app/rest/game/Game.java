@@ -22,7 +22,7 @@ public class Game {
 
     @Column(nullable = false)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY, value = "host_id")
-    Integer hostId;
+    long hostId;
 
     @OneToMany(cascade = CascadeType.MERGE)
     private List<User> players;

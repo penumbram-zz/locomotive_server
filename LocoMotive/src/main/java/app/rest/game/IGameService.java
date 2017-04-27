@@ -8,5 +8,6 @@ public interface IGameService {
     void saveGame(Game game);
     Game findGameById(long id);
     Iterable<Game> getGames();
+    void deleteById(long id);
 
 }

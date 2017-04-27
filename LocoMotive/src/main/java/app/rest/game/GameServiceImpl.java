@@ -31,5 +31,9 @@ public class GameServiceImpl implements IGameService {
         return gameRepository.findAll();
     }
 
+    @Override
+    public void deleteById(long id) {
+        gameRepository.delete(id);
+    }
 
 }

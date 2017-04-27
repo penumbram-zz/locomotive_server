@@ -27,3 +27,5 @@ _
 /src/main/java/app/rest/game/GameController.java,a/1/a19de48b23f06a5d9eced5c7947871648c024cc1
 ^
 .src/main/java/app/rest/user/JSONGameLobby.java,8/3/8357e07eff7d6ca7a934393cf30af75b48ea111f
+X
+(src/main/java/app/rest/util/Utility.java,a/1/a145bcae9b8337dd5a33bef940e794992baf5b07
