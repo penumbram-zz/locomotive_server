@@ -6,18 +6,13 @@ import lombok.Getter;
 /**
  * Created by tolgacaner on 20/04/2017.
  */
-public class JSONResponseAddUser {
+public class JSONResponseAddUser extends JSONResponse {
 
     @Getter
     private User user;
-    @Getter
-    private Integer code;
-    @Getter
-    private String message;
 
     public JSONResponseAddUser(User user, Integer code, String message) {
+        super(code,message);
         this.user = user;
-        this.code = code;
-        this.message = message;
     }
 }

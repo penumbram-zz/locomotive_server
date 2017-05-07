@@ -1,0 +1,16 @@
+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(º¾ñÂûÿÿÿÿ8˜ˆÈ¡»+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(á©’¨8èàÈ¡»+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(Š·éÎùÿÿÿÿ8Æ¸Ç¡»+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(©¸Šå8Æ´È¡»+
+—squid:S1160"{Refactor this method to throw at most one checked exception instead of: java.lang.InterruptedException, java.io.IOException(Ì€™÷8ÑàÏ¡»+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(ôõ‡¢8ö€Ç¡»+
+ksquid:S1132"JMove the "exit" string literal on the left side of this string comparison.(ç£ú›ýÿÿÿÿ8–­¼¡»+
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8³“Ë¡»+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(íßª²8–­¼¡»+
