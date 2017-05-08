@@ -1,6 +1,7 @@
 package app.rest.util;
 
 import app.rest.socket.Message;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -22,5 +23,16 @@ public class Utility {
             e.printStackTrace();
         }
         return t;
+    }
+
+    public static String JSONObjectToString(Object object) {
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonInString = null;
+        try {
+            jsonInString = mapper.writeValueAsString(object);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return jsonInString;
     }
 }

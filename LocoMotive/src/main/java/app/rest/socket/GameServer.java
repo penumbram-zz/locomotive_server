@@ -1,6 +1,10 @@
 package app.rest.socket;
 
+import app.rest.game.DistanceCalculator;
+import app.rest.game.Game;
+import app.rest.game.Prize;
 import com.sun.mail.imap.Utility;
+import lombok.Setter;
 import org.java_websocket.WebSocket;
 import org.java_websocket.handshake.ClientHandshake;
 import org.java_websocket.server.WebSocketServer;
@@ -15,14 +19,19 @@ import java.util.Collection;
 import java.util.List;
 
 import static app.rest.util.Utility.stringToJSONObject;
+import static app.rest.util.Utility.JSONObjectToString;
 
 /**
  * Created by tolgacaner on 28/04/2017.
  */
 public class GameServer extends WebSocketServer {
 
+
+    private static final Double PRIZE_RADIUS = 5.0;
     List players = new ArrayList();
     public GameServerDelegate gameServerDelegate;
+    @Setter
+    Game game;
 
     public GameServer( int port ) throws UnknownHostException {
         super( new InetSocketAddress(port) );
@@ -69,8 +78,11 @@ public class GameServer extends WebSocketServer {
 
     @Override
     public void onMessage(WebSocket webSocket, String s) {
-        this.sendToAll(s);
         Message message = stringToJSONObject(s,Message.class);
+        checkIfPointGain(message);
+        message.setPrizes(game.getPrizes());
+        String messageNew = JSONObjectToString(message);
+        this.sendToAll(messageNew);
     }
 
     @Override
@@ -127,6 +139,23 @@ public class GameServer extends WebSocketServer {
         synchronized ( con ) {
             for( WebSocket c : con ) {
                 c.send( text );
+            }
+        }
+    }
+
+
+
+    //MARK: checkIfPointGain
+
+    private void checkIfPointGain(Message message) {
+        synchronized (GameServer.class) {
+            for (Prize prize : game.getPrizes()) {
+                if (prize.getClaimer() == -1) { //nobody claimed it
+                    Double distance = DistanceCalculator.distance(prize.getLatitude(), prize.getLongitude(), message.getPosition().getLatitude(), message.getPosition().getLongitude());
+                    if (distance < PRIZE_RADIUS) {
+                        prize.setClaimer(message.getId());
+                    }
+                }
             }
         }
     }

@@ -37,6 +37,7 @@ public class GameController implements GameServerDelegate {
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public JSONResponseGame createGame(@RequestBody Game game) {
+        game.setPrizes(GameMapGenerator.getPrizes(game));
         gameService.saveGame(game);
         return new JSONResponseGame(game,200,"Created game succesfully");
     }
@@ -77,7 +78,7 @@ public class GameController implements GameServerDelegate {
     public JSONResponseGame startGame(@RequestBody JSONStartGame jsonStartGame) {
         Game game = gameService.findGameById(jsonStartGame.getGameId());
         game.setStartTime(jsonStartGame.getStartDate());
-        int port = startWebSocket();
+        int port = startWebSocket(game);
         if (port == -1) {
             System.out.println("NO AVAILABLE PORTS RIGHT NOW! SERVER BUSY");
         }
@@ -86,7 +87,7 @@ public class GameController implements GameServerDelegate {
         return new JSONResponseGame(game,200,"Game starting");
     }
 
-    private int startWebSocket() {
+    private int startWebSocket(Game game) {
         int port = -1;
         GameServer s = null;
         if (!unusedServers.isEmpty()) {
@@ -111,7 +112,7 @@ public class GameController implements GameServerDelegate {
             }
 
         }
-
+        s.setGame(game);
         return port;
     }
 

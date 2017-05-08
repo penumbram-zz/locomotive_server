@@ -38,9 +38,9 @@ public class Game {
     @Column(nullable = false)
     Double radius;
 
+    @Column
     @OneToMany(cascade = CascadeType.MERGE)
     private List<User> players;
-
 
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy HH:mm:ss")
     @Column
@@ -48,6 +48,10 @@ public class Game {
 
     @Column
     int port;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Prize> prizes;
+
 /*
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
     @Getter @Setter
