@@ -1,18 +1,7 @@
 
-`squid:S2147"DCombine this catch with the one at line 36, which has the same body.(ï­£Ä8®ÉÓ¡»+
-~squid:UselessImportCheck"URemove this unused import 'org.springframework.boot.autoconfigure.domain.EntityScan'.(›Ù¯8üÀ»§¹+
-Asquid:S1166"%Either log or rethrow this exception.(ï­£Ä8®ÉÓ¡»+
-squid:UselessImportCheck"dRemove this unused import 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration'.(¦–·Ë8¥˜¿Ğ¸+
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8´İÒ¡»+
-bsquid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8®ÉÓ¡»+
-Ksquid:S00108")Either remove or fill this block of code.(±Ÿ—±ÿÿÿÿÿ8÷¤Ñ¡»+
-squid:UselessImportCheck"aRemove this unused import 'org.springframework.data.jpa.repository.config.EnableJpaRepositories'.(²œ˜üÿÿÿÿ8üÀ»§¹+
-Asquid:S1166"%Either log or rethrow this exception.(´ú§â8´İÒ¡»+
-Fsquid:S1166"%Either log or rethrow this exception.(±Ÿ—±ÿÿÿÿÿ8÷¤Ñ¡»+
+Zsquid:UselessImportCheck",Remove this unused import 'java.util.Timer'.(†£ñáÿÿÿÿÿ8äóÒ˜¾+
 Tsquid:S1118":Add a private constructor to hide the implicit public one.(¼è„½úÿÿÿÿ
-—squid:UselessImportCheck"iRemove this unused import 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration'.(“ìšúÿÿÿÿ8¥˜¿Ğ¸+
-`squid:S2147"DCombine this catch with the one at line 36, which has the same body.(ä ¹€8®ÉÓ¡»+
-squid:UselessImportCheck"QRemove this unused import 'org.springframework.context.annotation.ComponentScan'.(æëòÒûÿÿÿÿ8üÀ»§¹+
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8®ÉÓ¡»+
-‰squid:UselessImportCheck"[Remove this unused import 'org.springframework.boot.autoconfigure.EnableAutoConfiguration'.(æèşŞøÿÿÿÿ8ŠÖ·§¹+
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8®ÉÓ¡»+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.( ç®8ô¸ö˜¾+
+Ysquid:UselessImportCheck"0Remove this unused import 'java.util.TimerTask'.(àÀÇÙ8äóÒ˜¾+
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÉãÃ®8Á ´š¾+

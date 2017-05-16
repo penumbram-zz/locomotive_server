@@ -1,16 +1,32 @@
 
-[
-squid:S106";Replace this usage of System.out or System.err by a logger.(º¾ñÂûÿÿÿÿ8˜ˆÈ¡»+
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8ÃÄÿ£¼+
+bsquid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8èª­”¾+
+—squid:S1160"{Refactor this method to throw at most one checked exception instead of: java.lang.InterruptedException, java.io.IOException(Ì€™÷8ÃÄÿ£¼+
 V
-squid:S106";Replace this usage of System.out or System.err by a logger.(á©’¨8èàÈ¡»+
+squid:S106";Replace this usage of System.out or System.err by a logger.(íßª²8ÃÄÿ£¼+
+_squid:S1155">Use isEmpty() to check whether the collection is empty or not.(–³åøøÿÿÿÿ8Ÿ¨ç˜¾+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(¤Ü¥Úùÿÿÿÿ8÷ÅÐ™¾+
+Asquid:S1166"%Either log or rethrow this exception.(ï­£Ä8èª­”¾+
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8›ø¬”¾+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(á©’¨8ÃÄÿ£¼+
+]squid:S1191"<Replace this usage of Sun classes by ones from the Java API.(áæ¼¸úÿÿÿÿ8Éµ¶¥¼+
+ksquid:S1132"JMove the "exit" string literal on the left side of this string comparison.(ç£ú›ýÿÿÿÿ8ˆ¾«”¾+
+U
+squid:S106";Replace this usage of System.out or System.err by a logger.(ã‹ìV8“ïÐ™¾+
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8èª­”¾+
+‘"squid:ClassVariableVisibilityCheck"^Make gameServerDelegate a static final constant or non-public and provide accessors if needed.(Ùñ›—8˜ÓÁš¾+
+dsquid:UselessImportCheck"6Remove this unused import 'com.sun.mail.imap.Utility'.(áæ¼¸úÿÿÿÿ8ä”Á¥¼+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(©¸Šå8ÃÄÿ£¼+
+asquid:S2147"ECombine this catch with the one at line 117, which has the same body.(ä ¹€8èª­”¾+
+Asquid:S1166"%Either log or rethrow this exception.(ï­£Ä8›ø¬”¾+
 [
 squid:S106";Replace this usage of System.out or System.err by a logger.(Š·éÎùÿÿÿÿ8Æ¸Ç¡»+
-V
-squid:S106";Replace this usage of System.out or System.err by a logger.(©¸Šå8Æ´È¡»+
-—squid:S1160"{Refactor this method to throw at most one checked exception instead of: java.lang.InterruptedException, java.io.IOException(Ì€™÷8ÑàÏ¡»+
+`squid:S1188"DReduce this lambda expression number of lines from 22 to at most 20.(˜¸¯Å8èª­”¾+
 V
 squid:S106";Replace this usage of System.out or System.err by a logger.(ôõ‡¢8ö€Ç¡»+
-ksquid:S1132"JMove the "exit" string literal on the left side of this string comparison.(ç£ú›ýÿÿÿÿ8–­¼¡»+
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8³“Ë¡»+
-V
-squid:S106";Replace this usage of System.out or System.err by a logger.(íßª²8–­¼¡»+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(ˆ±µ­ûÿÿÿÿ8¨­Ï™¾+
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8èª­”¾+

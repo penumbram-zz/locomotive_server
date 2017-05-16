@@ -1,2 +1,15 @@
 
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(²ÄÍ8¥±‹€»+
+asquid:S2147"ECombine this catch with the one at line 108, which has the same body.(ï­£Ä8¡õÜš¾+
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8ÛÌÇš¾+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(Ô„»â8Íê£•¾+
+Asquid:S1166"%Either log or rethrow this exception.(ï­£Ä8ÛÌÇš¾+
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8¡õÜš¾+
+bsquid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8¡õÜš¾+
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(²ÄÍ8öå™¾+
+Asquid:S1166"%Either log or rethrow this exception.(ï­£Ä8¡õÜš¾+
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8¡õÜš¾+
+Xsquid:S2259"<NullPointerException might be thrown as 's' is nullable here(ŠÿÄå8¡õÜš¾+
+ksquid:UselessImportCheck"=Remove this unused import 'org.java_websocket.WebSocketImpl'.(À›¾Óÿÿÿÿÿ8²›Ë˜¾+
+hsquid:UselessImportCheck":Remove this unused import 'java.net.UnknownHostException'.(Ú·¬˜úÿÿÿÿ8˜Š½š¾+
+Xsquid:S2259"<NullPointerException might be thrown as 's' is nullable here(¤™¿Œ8úü¥¥¾+

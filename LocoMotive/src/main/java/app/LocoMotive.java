@@ -4,6 +4,8 @@ import app.rest.socket.GameServer;
 import org.java_websocket.WebSocketImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.*;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
@@ -15,6 +17,7 @@ import java.util.TimerTask;
  */
 
 @SpringBootApplication
+@EnableAsync
 public class LocoMotive {
     public static void main(String[] args) {
         SpringApplication.run(LocoMotive.class, args); //NOSONAR

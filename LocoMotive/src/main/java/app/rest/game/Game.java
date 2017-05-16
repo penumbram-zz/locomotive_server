@@ -42,12 +42,11 @@ public class Game {
     @OneToMany(cascade = CascadeType.MERGE)
     private List<User> players;
 
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy HH:mm:ss")
-    @Column
-    Calendar startTime;
+    @Column(nullable = false)
+    boolean started = false;
 
     @Column
-    int port;
+    Integer port;
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Prize> prizes;

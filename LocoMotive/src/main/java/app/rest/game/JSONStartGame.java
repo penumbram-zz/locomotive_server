@@ -14,8 +14,4 @@ import java.util.Date;
  */
 
 @Data
-public class JSONStartGame extends JSONGameLobby {
-    @NotBlank
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy HH:mm:ss")
-    private Calendar startDate;
-}
+public class JSONStartGame extends JSONGameLobby {}

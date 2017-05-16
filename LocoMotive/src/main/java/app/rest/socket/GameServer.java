@@ -8,6 +8,7 @@ import lombok.Setter;
 import org.java_websocket.WebSocket;
 import org.java_websocket.handshake.ClientHandshake;
 import org.java_websocket.server.WebSocketServer;
+import org.springframework.scheduling.annotation.Async;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -43,7 +44,7 @@ public class GameServer extends WebSocketServer {
 
     @Override
     public void onOpen(WebSocket webSocket, ClientHandshake clientHandshake) {
-        this.sendToAll( "new connection: " + clientHandshake.getResourceDescriptor() );
+        this.sendToAll( "new connection: " + clientHandshake.getResourceDescriptor());
         players.add(new Object());
         System.out.println("onOpen");
     }
@@ -79,10 +80,13 @@ public class GameServer extends WebSocketServer {
     @Override
     public void onMessage(WebSocket webSocket, String s) {
         Message message = stringToJSONObject(s,Message.class);
-        checkIfPointGain(message);
+        boolean pointsGained = checkIfPointGained(message);
         message.setPrizes(game.getPrizes());
         String messageNew = JSONObjectToString(message);
         this.sendToAll(messageNew);
+        if (pointsGained) {
+            gameServerDelegate.updatePrizes(game.getPrizes(),game.getId());
+        }
     }
 
     @Override
@@ -96,30 +100,41 @@ public class GameServer extends WebSocketServer {
         System.out.println("onStart");
     }
 
-
+    @Async
     public void startServer() throws InterruptedException , IOException {
         start();
-        System.out.println( "ChatServer started on port: " + getPort() );
+        System.out.println( "Game Server started on port: " + getPort() );
 
         Thread serverThread = new Thread(() -> {
             BufferedReader sysin = new BufferedReader( new InputStreamReader( System.in ) );
-            while ( true ) {
+            while (true) {
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    System.out.println("CANT SLEEP");
+                    e.printStackTrace();
+                }
                 String in = null;
                 try {
-                    in = sysin.readLine();
+                    while (sysin.ready()) {
+                        in = sysin.readLine();
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                sendToAll( in );
-                if( in.equals("exit")) {
-                    try {
-                        stop();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+
+                if (in != null) {
+                    sendToAll( in );
+                    if( in.equals("exit")) {
+                        try {
+                            stop();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        break;
                     }
-                    break;
                 }
             }
         });
@@ -147,17 +162,20 @@ public class GameServer extends WebSocketServer {
 
     //MARK: checkIfPointGain
 
-    private void checkIfPointGain(Message message) {
+    private boolean checkIfPointGained(Message message) {
+        boolean pointsGained = false;
         synchronized (GameServer.class) {
             for (Prize prize : game.getPrizes()) {
                 if (prize.getClaimer() == -1) { //nobody claimed it
                     Double distance = DistanceCalculator.distance(prize.getLatitude(), prize.getLongitude(), message.getPosition().getLatitude(), message.getPosition().getLongitude());
                     if (distance < PRIZE_RADIUS) {
                         prize.setClaimer(message.getId());
+                        pointsGained = true;
                     }
                 }
             }
         }
+        return pointsGained;
     }
 
 

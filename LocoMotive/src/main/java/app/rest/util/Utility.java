@@ -10,9 +10,6 @@ import java.io.IOException;
  * Created by tolgacaner on 27/04/2017.
  */
 public class Utility {
-    public static String serviceFromLocalEndpoint(String endpoint) {
-        return "http://localhost:8080" + endpoint;
-    }
 
     public static <T> T stringToJSONObject(String string, Class<T> valueType) {
         ObjectMapper mapper = new ObjectMapper();

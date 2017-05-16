@@ -13,7 +13,7 @@ public class GameMapGenerator {
 
 
     private static final Double r_earth = Double.valueOf(6378000); //meters
-
+    private static final int NUMBER_OF_TOTAL_PRIZES = 10;
 
     public static List<Prize> getPrizes(Game game) {
         List<Prize> result = new ArrayList<>();
@@ -24,13 +24,13 @@ public class GameMapGenerator {
 
         Random random = new Random();
 
-        Double rangeLatMin = latitude  + (-radius / r_earth) * (180 / Math.PI); //longitude + (dx / r_earth) * (180 / pi) / cos(latitude * pi/180);
+        Double rangeLatMin = latitude  + (-radius / r_earth) * (180 / Math.PI);
         Double rangeLatMax = latitude  + (radius / r_earth) * (180 / Math.PI);
 
         Double rangeLonMin = longitude + (-radius / r_earth) * (180 / Math.PI) / cos(latitude * Math.PI/180); //
         Double rangeLonMax = longitude + (radius / r_earth) * (180 / Math.PI) / cos(latitude * Math.PI/180);
 
-        while (result.size() < 10) {
+        while (result.size() < NUMBER_OF_TOTAL_PRIZES) {
             Double randomLatValue = rangeLatMin + (rangeLatMax - rangeLatMin) * random.nextDouble();
             Double randomLonValue = rangeLonMin + (rangeLonMax - rangeLonMin) * random.nextDouble();
             if (DistanceCalculator.distance(latitude,longitude,randomLatValue, randomLonValue) < radius) {

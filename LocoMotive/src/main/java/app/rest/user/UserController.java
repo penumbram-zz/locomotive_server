@@ -1,6 +1,5 @@
 package app.rest.user;
 
-import app.rest.game.JSONResponseAddUser;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
